@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>if문을 이용한 버튼 테스트</h1>
+
+<input id="change" type="button" value="Night" onclick="
+ if(document.querySelector('#change').value === 'Night'){
+    document.querySelector('body').style.background = 'black';
+    document.querySelector('body').style.color = 'white';
+    document.querySelector('#change').value = 'Day';
+ }
+    else{
+    document.querySelector('body').style.background = 'white';
+    document.querySelector('body').style.color = 'black';
+    document.querySelector('#change').value = 'Night';
+    }
+ ">
+
+ <h1>버튼 테스트 위에 코드보다 간결하게 (index 코드 간결화)</h1>
+ <input type="button" value="Night" onclick="
+ if(this.value === 'Night'){
+    document.querySelector('body').style.background = 'black';
+    document.querySelector('body').style.color = 'white';
+    this.value = 'Day';
+ }
+    else{
+    document.querySelector('body').style.background = 'white';
+    document.querySelector('body').style.color = 'black';
+    this.value = 'Night';
+    }
+ ">
+ <br> id="change"라는걸 없에고 그대신 this를 활용함
+
+  <h1>중복되는 body에 씌우는 태그들을 간결화(변수 var 사용) 최종</h1>
+  <input type="button" value="Night" onclick="
+  var target = document.querySelector('body');
+  if(this.value === 'Night'){
+     target.style.background = 'black';
+     target.style.color = 'white';
+     this.value = 'Day';
+  }
+     else{
+     target.style.background = 'white';
+     target.style.color = 'black';
+     this.value = 'Night';
+     }
+  ">
+<br>var target이라는 변수를 씌우고 중복되는 것들을 간결히 target으로 줄임
+  
+
+</body>
+</html>
